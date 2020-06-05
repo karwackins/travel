@@ -15,4 +15,9 @@ class TouristObject extends Model
     {
         return $this->morphMany('App\Photo', 'photoable');
     }
+
+    public function scopeOrdered($query)
+    {
+        return $query->orderBy('name', 'asc');
+    }
 }

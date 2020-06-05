@@ -29,6 +29,6 @@
         </div>
 
     @endforeach
-
+{{$objects}}
 </div>
 @endsection
