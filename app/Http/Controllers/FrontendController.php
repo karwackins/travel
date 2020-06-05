@@ -15,7 +15,6 @@ class FrontendController extends Controller
     public function index()
     {
         $objects = $this->fR->getObjectsForMainPage();
-        dd($objects);
         return view('frontend.index', compact('objects'));
     }
     public function article()
