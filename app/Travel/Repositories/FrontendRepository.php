@@ -11,4 +11,9 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         return TouristObject::with(['city', 'photos'])->ordered()->paginate(8);
     }
+
+    public function getObject($id)
+    {
+        return TouristObject::with('city')->find($id);
+    }
 }

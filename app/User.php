@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Travel\Presenters\UserPresenter;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use UserPresenter;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +38,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function objects()
+    {
+        return $this->morphedByMany('App\Object','likeable');
+    }
+
+    public function photos()
+    {
+        return $this->morphMany('App\Photo','photoable');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

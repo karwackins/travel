@@ -21,9 +21,10 @@ class FrontendController extends Controller
     {
         return view('frontend.article');
     }
-    public function object()
+    public function object($id)
     {
-        return view('frontend.object');
+        $object = $this->fR->getObject($id);
+        return view('frontend.object', compact('object'));
     }
     public function person()
     {

@@ -18,7 +18,7 @@
                         <div class="caption">
                             <h3>{{$object->name}} <small>{{$object->city->name}}</small> </h3>
                             <p>{{Str::limit($object->description, 50)}}</p>
-                            <p><a href="{{ route('object') }}" class="btn btn-primary" role="button">Details</a></p>
+                            <p><a href="{{ url('objekt/'.$object->id) }}" class="btn btn-primary" role="button">Details</a></p>
                         </div>
                     </div>
                 </div>
