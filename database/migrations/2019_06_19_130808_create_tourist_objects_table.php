@@ -18,8 +18,8 @@ class CreateObjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('objects', function (Blueprint $table) {
-            
+        Schema::create('tourist_objects', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->string('name'); /* Lecture 8 */
             $table->bigInteger('user_id')->unsigned(); /* Lecture 8 */
@@ -37,7 +37,7 @@ class CreateObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objects');
+        Schema::dropIfExists('tourist_objects');
     }
 }
 

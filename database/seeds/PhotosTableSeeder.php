@@ -24,7 +24,7 @@ class PhotosTableSeeder extends Seeder
 
             DB::table('photos')->insert([
                 'photoable_type' => 'App\TouristObject',
-                'photoable_id' => $faker->numberBetween(1, 10),
+                'photoable_id' => $faker->unique()->numberBetween(1, 10),
                 'path' => $faker->imageUrl(800, 400, 'city')
             ]);
         }
