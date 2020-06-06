@@ -14,6 +14,6 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     public function getObject($id)
     {
-        return TouristObject::with('city')->find($id);
+        return TouristObject::with(['city', 'comments.user', 'articles.user','address','users.photos', 'rooms'])->find($id);
     }
 }
